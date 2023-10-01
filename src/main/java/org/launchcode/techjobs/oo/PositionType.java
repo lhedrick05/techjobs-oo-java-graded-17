@@ -2,11 +2,11 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
-public class PositionType {
+public class PositionType extends JobField {
 
-    private int id;
-    private static int nextId = 1;
-    private String value;
+//    private int id;
+//    private static int nextId = 1;
+//    private String value;
 
     public PositionType() {
         id = nextId;
@@ -35,22 +35,20 @@ public class PositionType {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PositionType that = (PositionType) o;
-        return id == that.id && Objects.equals(value, that.value);
+        return id == that.id;
     }
 
-
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
-    }
+//    @Override
+//    public int hashCode() {
+//        return Objects.hash(id);
+//    }
 
 
     // Getters and Setters:
 
-    public int getId() {
-        return id;
-    }
+//    public int getId() {
+//        return id;
+//    }
 
     public String getValue() {
         if(value == null || value.isEmpty()) {
