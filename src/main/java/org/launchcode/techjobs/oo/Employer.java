@@ -45,6 +45,9 @@ public class Employer {
     }
 
     public String getValue() {
+        if (value == null || value.isEmpty()) {
+            return value = "Data not available";
+        }
         return value;
     }
 

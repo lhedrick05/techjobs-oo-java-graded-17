@@ -20,12 +20,10 @@ public class PositionType {
 
     // TODO: Add a custom toString() method that returns the data stored in 'value'.
 
+
     @Override
     public String toString() {
-        return "PositionType{" +
-                "id=" + id +
-                ", value='" + value + '\'' +
-                '}';
+        return value;
     }
 
 
@@ -55,6 +53,9 @@ public class PositionType {
     }
 
     public String getValue() {
+        if(value == null || value.isEmpty()) {
+            return value = "Data not available";
+        }
         return value;
     }
 

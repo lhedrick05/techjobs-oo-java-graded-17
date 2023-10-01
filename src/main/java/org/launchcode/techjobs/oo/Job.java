@@ -2,6 +2,8 @@ package org.launchcode.techjobs.oo;
 
 import java.util.Objects;
 
+import static java.lang.System.lineSeparator;
+
 public class Job {
 
     private int id;
@@ -17,12 +19,13 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
 
-    public Job(int id) {
+    public Job() {
         this.id = nextId;
         nextId++;
     }
 
     public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -57,7 +60,7 @@ public class Job {
 
     public String getName() {
         if (name == null || name.isEmpty()) {
-            return "Data not available";
+            return name = "Data not available";
         }
         return name;
     }
@@ -102,13 +105,14 @@ public class Job {
 
     @Override
     public String toString() {
-        return "\n" +
+//        String newLine = lineSeparator();
+        return  "\n" + // Could not figure out how to properly use lineSeparator()
                 "ID: " + id +
                 "\nName: " + name +
-                "\nEmployer: " + employer.getValue() + //getValue()
+                "\nEmployer: " + employer.getValue() +
                 "\nLocation: " + location.getValue() +
                 "\nPosition Type: " + positionType.getValue() +
                 "\nCore Competency: " + coreCompetency.getValue() +
-                "\n";
+                "\n"; // Could not figure out how to properly use lineSeparator()
     }
 }
